@@ -1,0 +1,27 @@
+import java.util.Stack;
+
+public class ReverseStringUsingStack {
+
+    public static String reverse(String str) {
+        Stack<Character> stack = new Stack<>();
+
+        // Push all characters into the stack
+        for (char c : str.toCharArray()) {
+            stack.push(c);
+        }
+
+        // Pop all characters back into result
+        StringBuilder reversed = new StringBuilder();
+        while (!stack.isEmpty()) {
+            reversed.append(stack.pop());
+        }
+
+        return reversed.toString();
+    }
+
+    public static void main(String[] args) {
+        String input = "Jarvis";
+        String output = reverse(input);
+        System.out.println("Reversed string: " + output);
+    }
+}
